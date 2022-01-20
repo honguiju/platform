@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무모한 남매들</title>
+    <link rel="stylesheet" href="../css/detail.css">
+    <script type="text/javascript" src=//code.jquery.com/jquery-3.2.1.min.js></script>
+</head>
+<body>
+     <!-- header 시작 -->
+     <header class="header">
+        <!--해더내용 시작(header_all)-->
+        <div class="header_index">
+            <div class="header_all">
+                <!-- 로고(header_all_logo) -->
+                <div class="header_all_logo">
+                    <a href="/"><img src="../img/logo2.jpg" alt="로고이미지"></a>
+                </div>
+                <!-- 검색(header_all_search) -->
+            <form action="/views/search" method="GET">
+                <div class="header_all_search">
+                    <input class="header_search_text" type="text" name="name" placeholder="h I n 당신의 가구를 검색해 보세요.">
+                    <input class="header_search_button" type="submit" style='cursor:pointer' value="검색">
+                </div>
+            </form>
+
+                <!-- 햄버거 메뉴(header_left_tab) -->
+                <div class="header_tab">
+                    <!--햄버거 메뉴-->
+                    <div class="header_left_tab">
+                        <div class="header_all_tab">
+                            <input class="burger-check" type="checkbox" id="burger-check" />
+                            <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+                            
+                            <div class="menu">
+                                <div style="width: 250px;">
+                                    <ul>
+                                        <%-login_status[0].logout %>
+                                        <%-login_status[0].user_info %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> <!--햄버거 메뉴 끝-->
+                </div> <!--header_tab-->
+            </div>
+        </div>
+
+        <!--네비내용 시작(nav) -->
+        <div class="nav">
+            <div class="nav_main">
+                <li><a href="/views/store?categori=10" class="nav_link">거실</a></li>
+                <li><a href="/views/store?categori=23" class="nav_link">침실</a></li>
+                <li><a href="/views/store?categori=22" class="nav_link">서재</a></li>
+                <li><a href="/views/store?categori=15" class="nav_link">주방</a></li>
+                <li><a href="/views/store?categori=17" class="nav_link">옷방</a></li>
+                <li><a href="#" class="nav_link">욕실</a></li>
+            </div>
+        </div>
+    </header> <!--header 끝-->
+
+
+    <!--contents 시작-->
+    <div class="contents">
+        <!--상품사진 시작-->
+        <div class="info_Img">
+            <img class="detail_product_Img" src=<%=detail_data[0].imglink %>>
+        </div><!--상품사진 끝-->
+
+        <!--상품 정보 시작-->
+        <div class="product_all">
+            <div class="detail_product_info">
+                <div class="detail_info_brand"><%=detail_data[0].brand %></div>
+                <div class="detail_info_name" name=<%=detail_data[0].product_id %>><%=detail_data[0].name %></div>
+                <div class="detail_info_price"><%=detail_data[0].price %></div>
+            </div>
+
+            <div class="content_button">
+                    <% if (login_status[0].status  == "ok"){ %>
+                        <% if (detail_data.heart == "ok") { %>
+                            <button type="button" class="detail_wishlist_btn" name="del"><img src="../img/detail_heart.svg" name="0"></button><!-- svg 하트 -->    
+                        <% }else { %>
+                            <button type="button" class="detail_wishlist_btn" name="add" ><img src="../img/detail_empty_heart.svg" name="0"></button><!-- svg 빈하트 -->
+                        <% } %>
+                    <% } else { %>
+                        <button type="button"  class="detail_wishlist_btn" name="heart"><img src="../img/detail_empty_heart.svg" ></button><!-- svg 빈하트 -->
+                    <% } %>
+                <a href=<%=detail_data[0].link %>><li class="button_last">매장으로 이동</li></a>
+            </div>
+        </div>
+    </div>
+
+    <!------------------------상품 더보기------------------------->
+    <div class="section">
+        <h2>다른 상품 보기</h2>
+
+        <input type="radio" name="section_slide" id="slide01" checked>
+        <input type="radio" name="section_slide" id="slide02">
+        <input type="radio" name="section_slide" id="slide03">
+        
+        <div class="section_slidewrap">
+    
+            <div class="section_slidecontrol">
+                
+                <div class="control01">
+                    <div class="section_contents"> 
+                        <% for (var i=0; i <4; i++){ %>
+                                <div class="product_wrap" > 
+                                    <div class="product_details">
+                                        <a class='info_link' href='/detail?id=<%=similar_data[i].product_id %>'><img  class="similar_product_Img" src=<%=similar_data[i].imglink %>></a>
+                                        <div class="product_info">
+                                            <div  class="similar_info_brand"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].brand %></a></div>
+                                            <div  class="similar_info_name" name='<%=similar_data[i].product_id %>'><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].name %></a></div>
+                                            <div  class="similar_info_price"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].price %></a></div>
+                                <% if (login_status[0].status  == "ok"){ %>
+                                    <% if (similar_data[i].heart == "ok") { %>
+                                        <button class="wishlist_btn" name="del"><img src="../img/heart.svg" name="<%=i %>" ></button><!-- svg 하트 -->
+                                    <% }else { %>
+                                        <button class="wishlist_btn" name="add"><img src="../img/empty_heart.svg" name="<%=i %>"></button><!-- svg 빈하트 -->
+                                    <% } %>
+                                <% } else { %>
+                                    <button class="wishlist_btn" name="heart" ><img src="../img/empty_heart.svg" ></button><!-- svg 빈하트 -->
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                       <% } %>
+                    </div>
+                    <label for="slide03" class="left">
+                        <img src="../img/left.png" alt="">
+                    </label>
+                    <label for="slide02" class="right">
+                        <img src="../img/right.png" alt="">
+                    </label>
+                </div>
+
+
+                <div class="control02">
+                    <div class="section_contents">
+                        <% for (var i=4; i <8; i++){ %>
+                                <div class="product_wrap" > 
+                                    <div class="product_details">
+                                        <a class='info_link' href='/detail?id=<%=similar_data[i].product_id %>'><img  class="similar_product_Img" src=<%=similar_data[i].imglink %>></a>
+                                        <div class="product_info">
+                                            <div class="similar_info_brand"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].brand %></a></div>
+                                            <div class="similar_info_name" name='<%=similar_data[i].product_id %>'><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].name %></a></div>
+                                            <div class="similar_info_price"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].price %></a></div>
+                                <% if (login_status[0].status  == "ok"){ %>
+                                    <% if (similar_data[i].heart == "ok") { %>
+                                        <button class="wishlist_btn" name="del"><img src="../img/heart.svg" name="<%=i %>" ></button><!-- svg 하트 -->
+                                    <% }else { %>
+                                        <button class="wishlist_btn" name="add"><img src="../img/empty_heart.svg" name="<%=i %>"></button><!-- svg 빈하트 -->
+                                    <% } %>
+                                <% } else { %>
+                                    <button class="wishlist_btn" name="heart" ><img src="../img/empty_heart.svg" ></button><!-- svg 빈하트 -->
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                       <% } %>
+                    </div>
+                    <label for="slide01" class="left">
+                        <img src="../img/left.png" alt="">
+                    </label>
+                    <label for="slide03" class="right">
+                        <img src="../img/right.png" alt="">
+                    </label>
+                </div>
+
+
+                <div class="control03">
+                    <div class="section_contents" >
+                        <% for (var i=8; i <12; i++){ %>
+                                <div class="product_wrap" > 
+                                    <div class="product_details">
+                                        <a class='info_link' href='/detail?id=<%=similar_data[i].product_id %>'><img  class="similar_product_Img" src=<%=similar_data[i].imglink %>></a>
+                                        <div class="product_info">
+                                            <div class="similar_info_brand"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].brand %></a></div>
+                                            <div class="similar_info_name" name='<%=similar_data[i].product_id %>'><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].name %></a></div>
+                                            <div class="similar_info_price"><a href='/detail?id=<%=similar_data[i].product_id %>'><%=similar_data[i].price %></a></div>
+                                <% if (login_status[0].status  == "ok"){ %>
+                                    <% if (similar_data[i].heart == "ok") { %>
+                                        <button class="wishlist_btn" name="del"><img src="../img/heart.svg" name="<%=i %>"></button><!-- svg 하트 -->
+                                    <% }else { %>
+                                        <button class="wishlist_btn" name="add"><img src="../img/empty_heart.svg" name="<%=i %>"></button><!-- svg 빈하트 -->
+                                    <% } %>
+                                <% } else { %>
+                                    <button class="wishlist_btn" name="heart" ><img src="../img/empty_heart.svg" ></button><!-- svg 빈하트 -->
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                       <% } %>
+                    </div>
+                    <label for="slide02" class="left">
+                        <img src="../img/left.png" alt="">
+                    </label>
+                    <label for="slide01" class="right">
+                        <img src="../img/right.png" alt="">
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="script/detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무모한 남매들</title>
+    <script type="text/javascript" src=//code.jquery.com/jquery-3.2.1.min.js></script>
+    <link rel="stylesheet" href="../css/store.css">
+</head>
+<body>
+    <!-- header 시작 -->
+    <header class="header">
+        <!--해더내용 시작(header_all)-->
+        <div class="header_index">
+            <div class="header_all">
+                <!-- 로고(header_all_logo) -->
+                <div class="header_all_logo">
+                    <a href="/"><img src="../img/logo2.jpg" alt="로고이미지"></a>
+                </div>
+                <!-- 검색(header_all_search) -->
+                <form  clas="search" action="/views/search" method="GET">
+                <div class="header_all_search">
+                    <input class="header_search_text" type="text" name="name" placeholder="h I n 당신의 가구를 검색해 보세요.">
+                    <input class="header_search_button" type="submit" style='cursor:pointer' value="검색">
+                </div>
+                </form>
+
+                <!-- 햄버거 메뉴(header_left_tab) -->
+                <div class="header_tab">
+                    <!--햄버거 메뉴-->
+                    <div class="header_left_tab">
+                        <div class="header_all_tab">
+                            <input class="burger-check" type="checkbox" id="burger-check" />
+                            <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+                            
+                            <div class="menu">
+                                <div style="width: 250px;">
+                                    <ul>
+                                        <%-login_status[0].logout %>
+                                        <%-login_status[0].user_info %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> <!--햄버거 메뉴 끝-->
+                </div> <!--header_tab-->
+            </div>
+        </div>
+    </header> <!--header 끝-->
+
+    <!-- contents 시작 -->
+    <div class="contents">
+        <!--아코디언 메뉴-->
+        <section class="accordion_menu_all">
+            <ul class="accordion_mainmenu">
+
+                <!--거실(living)-->
+                <li class="accor_nav">
+                    <a href="/views/store?categori=10" ><h2>거실</h2></a>
+                </li>
+   
+                 <!--침실(sleepig)-->
+                <li class="accor_nav">
+                    <a href="/views/store?categori=23"><h2>침실</h2></a>
+                </li>
+   
+                <!--서재(study)-->
+                <li class="accor_nav">
+                    <a href="/views/store?categori=22"><h2>서재</h2></a>
+                   </li>
+   
+                <!--주방(kitchen)-->
+                <li class="accor_nav">
+                    <a href="/views/store?categori=15"><h2>주방</h2></a>
+                </li>
+                <!--옷방(closet)-->
+                <li class="accor_nav">
+                    <a href="/views/store?categori=17"><h2>옷방</h2></a>
+                </li>   
+                <!--욕실(bath)-->
+                <li class="accor_nav">
+                       <h2>욕실</h2>        
+                   </li>
+               </ul> <!--accordion_mainmenu 끝-->
+        </section> <!--accodion_menu_all 끝-->
+
+        <!--------------- 컨텐츠 상품 목록 ----------------->
+        <section class="section_popular">
+    
+            <!-- ejs 형식으로 서버에서 데이터 받아서 쓰는 형식으로 바꿈. -->
+            <div class="store_product" style="width: 600px; display: block;">
+               <h1 style="display: inline; color: red;">'<%-keyword %>'</h1><h1 style="display: inline;">에 대한 검색결과가 없습니다.</h1>
+        </div> 
+        <!--contents_product_all 끝--> 
+    </div> 
+    <!--contents 끝-->
+    
+    <!--page_all 시작-->
+    <!--contents_page_all 끝-->
+    <script type="text/javascript" src="../script/wishlist.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무모한 남매들</title>
+    <script type="text/javascript" src=//code.jquery.com/jquery-3.2.1.min.js></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- header 시작 -->
+    <div class="header">
+        <div class="header_all">
+            <!-- header_all_logo -->
+            <div class="header_all_logo">
+                <a href="/"><img src="img/logo2.jpg" alt="로고이미지"></a>
+            </div>
+            <!-- header_all_search -->
+            <div class="header_all_search">
+                <input class="header_search_text" type="text" placeholder="h I n 당신의 가구를 검색해 보세요.">
+                <button class="header_search_button">검색</button>
+            </div>
+            <!-- header_all_top -->
+            <div class="header_all_top">
+                <ul class="header_top_menu">
+                    <li><a href="/views/categori">스토어</a></li>
+                    <li><a href="sub.html">커뮤니티</a></li>
+                </ul>
+            </div>
+            <!-- header_all_tab -->
+            <div class="header_all_tab">
+                <input class="burger-check" type="checkbox" id="burger-check" />
+                <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+                   
+                <div class="menu">
+                    <div style="width: 300px;">
+                        <ul>
+                            <%-login_status[0].logout %>
+                            <%-login_status[0].user_info %>
+                        </ul>
+                    </div>
+                </div>
+            </div> <!--header_all_tab / 햄버거 메뉴 끝-->
+        </div> <!--header_all 끝-->
+    </div> <!--header 끝-->
+
+    <!-- nav 시작 -->
+    <div class="nav">
+        <div class="nav_main">
+            <li><a href="/views/categori" class="nav_link">거실</a></li>
+            <li><a href="/views/categori" class="nav_link">침실</a></li>
+            <li><a href="/views/categori" class="nav_link">서재</a></li>
+            <li><a href="/views/categori" class="nav_link">주방</a></li>
+            <li><a href="/views/categori" class="nav_link">옷방</a></li>
+            <li><a href="/views/categori" class="nav_link">욕실</a></li>
+            <li><a href="/views/categori" class="nav_link">놀이방</a></li>
+            <li><a href="/views/categori" class="nav_link">1인가구</a></li>
+        </div>
+    </div>
+
+    <!-- contents 시작 -->
+    <div class="contents">
+        <!-- 배너 시작 -->
+        <div class="contents_main_slide">
+            <input type="radio" name="pos" id="pos1" checked>
+            <input type="radio" name="pos" id="pos2">
+            <input type="radio" name="pos" id="pos3">
+            <input type="radio" name="pos" id="pos4">
+            <ul>
+                <li><img src="img/eventimg1.jpg" alt="이벤트1"></li>
+                <li><img src="img/eventimg2.jpg" alt="이벤트2"></li>
+                <li><img src="img/eventimg1.jpg" alt="이벤트3"></li>
+                <li><img src="img/eventimg2.jpg" alt="이벤트4"></li>
+            </ul>
+            <p class="contents_main_bullet">
+                <label for="pos1"></label>
+                <label for="pos2"></label>
+                <label for="pos3"></label>
+                <label for="pos4"></label>
+            </p>
+        </div>
+
+        <!-- 아이콘 시작 -->
+        <div class="contents_icon">
+            <h2>카테고리</h2>
+            <div class="icon_box">
+                <!--거실 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/거실.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>거실</p>
+                </li>
+                <!--침실 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/침실.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>침실</p>
+                </li>
+                <!--서재 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/서재.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>서재</p>
+                </li>
+                <!--주방 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/주방.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>주방</p>
+                </li>
+                <!--옷방 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/옷방.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>옷방</p>
+                </li>
+                <!--욕실 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/욕실.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>욕실</p>
+                </li>
+                <!--놀이방 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/놀이방.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>놀이방</p>
+                </li>
+                <!--1인가구 아이콘-->
+                <li>
+                    <div class="icon">
+                        <div class="icon_imgBox">
+                            <a href="">
+                                <img src="img/1인가구.jpg">
+                            </a>
+                        </div>
+                    </div>
+                    <p>1인가구</p>
+                </li>
+            </div><!--icon_box-->
+        </div><!--contents_icon-->
+    
+        <!-- 인기 인테리어 시작 -->
+        <div class="tab_content">
+            <h2>인기 인테리어</h2>
+
+            <input type="radio" name="tabmenu" id="tab01" checked>
+            <label for="tab01">원목</label>
+            <input type="radio" name="tabmenu" id="tab02">
+            <label for="tab02">모던</label>
+            <input type="radio" name="tabmenu" id="tab03">
+            <label for="tab03">화이트</label>
+            
+            <!-- 원목 상품 -->
+            <div class="conbox con1">
+                <ul>
+                    <li> <!--원목_상품1-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--원목_상품2-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--원목_상품3-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--원목_상품4-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                
+                    <li> <!--원목_상품5-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li> <!--원목_상품6-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--원목_상품7-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--원목_상품8-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--원목_상품9-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--원목_상품10-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 모던 상품 -->
+            <div class="conbox con2">
+                <ul>
+                    <li> <!--모던_상품1-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--모던_상품2-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--모던_상품3-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--모던_상품4-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                
+                    <li> <!--모던_상품5-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li> <!--모던_상품6-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--모던_상품7-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--모던_상품8-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--모던_상품9-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--모던_상품10-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 화이트 상품 -->
+            <div class="conbox con3">
+                <ul>
+                    <li> <!--화이트_상품1-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--화이트_상품2-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--화이트_상품3-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--화이트_상품4-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                
+                    <li> <!--화이트_상품5-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li> <!--화이트_상품6-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--화이트_상품7-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--화이트_상품8-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+
+                    <li> <!--화이트_상품9-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/19/11/46//9613/9613_main_068.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">[위클리딜] 동서가구 LV 킨더스 SS 수납침대 5종모음</p>
+                        <p class="price">155,000원 </p></a>
+                    </li>
+
+                    <li> <!--화이트_상품10-->
+                        <a href="#"><img src="https://www.dongsuhfurniture.co.kr/data/goods/20/05/20//10157/10157_main_065.jpg"></a>
+                        <p class="item_brand">동서가구</p>
+                        <p class="item_name">동서가구 리클라우드 모션베드＋셀텍스폼 매트리스</p>
+                        <p class="price">839,000원</p></a>
+                    </li>
+                </ul>
+            </div>
+        </div> <!--tab_content / 인기인테리어 끝-->        
+
+    <!--인기상품-->
+
+    <h2 style="margin-left:11%; margin-top: 15px;">인기 상품</h2>
+    
+    <!-- ejs 형식으로 서버에서 데이터 받아서 쓰는 형식으로 바꿈. -->
+    <div class="body_popular">
+        <% for(var i =1; i <9; i++) {%>
+            <div class="body_popular_product">
+                <div class="body_popular_productIMG">
+                    <a href= <%=data[i].link %> >
+                    <img src =<%=data[i].imglink %> >
+                    </div>
+                </a> 
+                <div class="body_popular_product_item">
+                    <div class="body_popular_item">
+                        <span class="body_popular_item_brand"><%=data[i].brand %></span>
+                        <span class="body_popular_item_name"><%=data[i].name %></span>
+                    </div>
+                    <div class="body_popular_item_price">
+                        <span class="price"><%=data[i].price %></span>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+    <!-- 여기까지가 처음 인기상품 보여지는 grid -->
+
+    <!-- 더보기 버튼 눌렀을 때 script로 상품들 추가하려고 grid한개 더 만들었음. -->
+    <div class="plus_product"></div>       <!-- 그리드안에 내용이 없지만 버튼을 누르면 내용을 추가하는 형식으로 script 만들었음. -->
+    <div class="plus_button"><button class="more_product">더 보 기</button></div>
+</div>
+    
+
+    <h2 style="margin-left:11%">인기 브랜드</h2>
+
+    <div class="body_brand">
+
+        <!--브랜드 이미지 1-->
+         <div class="body_brandIMG">
+            <img src="http://dfgagu.hgodo.com/dfmall/logo.png" >
+        </div>
+
+        <!--브랜드 이미지 2-->
+        <div class="body_brandIMG">
+            <img src="https://www.emonshome.co.kr/data/skin/front/emons_vreviewx_0522/img/banner/5a763870b164ed8c0f8dfab9662eb636_95191.png">
+        </div>
+
+        <!--브랜드 이미지 3-->
+        <div class="body_brandIMG">
+            <img src="http://bentree.co.kr/_wg/img/logo_on.jpg">
+        </div>
+
+        <!--브랜드 이미지 4-->
+        <div class="body_brandIMG">
+            <img src="http://mall.hanssem.com/resources/images/common/logo_hs.gif">
+        </div>
+
+        <!--브랜드 이미지 5-->
+        <div class="body_brandIMG">
+            <img src="https://www.zinus.co.kr/data/skin/front/story_g/img/banner/1527da91265966aaf77cab1dff213fb6_74579.png">
+        </div>
+
+        <!--브랜드 이미지 6-->
+        <div class="body_brandIMG">
+            <img src="http://bifshop.co.kr/n_images/main/logo.png">
+        </div>
+
+        <!--브랜드 이미지 7-->
+        <div class="body_brandIMG">
+            <img src="https://www.zinus.co.kr/data/skin/front/story_g/img/banner/1527da91265966aaf77cab1dff213fb6_74579.png">
+        </div>
+
+        <!--브랜드 이미지 8-->
+        <div class="body_brandIMG">
+            <img src="http://bifshop.co.kr/n_images/main/logo.png">
+        </div>
+
+        <!--브랜드 이미지 9-->
+        <div class="body_brandIMG">
+            <img src="http://dfgagu.hgodo.com/dfmall/logo.png" >
+        </div>
+
+        <!--브랜드 이미지 10-->
+        <div class="body_brandIMG">
+            <img src="https://www.emonshome.co.kr/data/skin/front/emons_vreviewx_0522/img/banner/5a763870b164ed8c0f8dfab9662eb636_95191.png">
+        </div>
+
+        <!--브랜드 이미지 11-->
+        <div class="body_brandIMG">
+            <img src="http://bentree.co.kr/_wg/img/logo_on.jpg">
+        </div>
+
+        <!--브랜드 이미지 12-->
+        <div class="body_brandIMG">
+            <img src="http://mall.hanssem.com/resources/images/common/logo_hs.gif">
+        </div>
+
+        <!--브랜드 이미지 13-->
+        <div class="body_brandIMG">
+            <img src="https://www.zinus.co.kr/data/skin/front/story_g/img/banner/1527da91265966aaf77cab1dff213fb6_74579.png">
+        </div>
+
+        <!--브랜드 이미지 14-->
+        <div class="body_brandIMG">
+            <img src="http://bifshop.co.kr/n_images/main/logo.png">
+        </div>
+
+        <!--브랜드 이미지 15-->
+        <div class="body_brandIMG">
+            <img src="https://www.zinus.co.kr/data/skin/front/story_g/img/banner/1527da91265966aaf77cab1dff213fb6_74579.png">
+        </div>
+
+        <!--브랜드 이미지 16-->
+        <div class="body_brandIMG">
+            <img src="http://bifshop.co.kr/n_images/main/logo.png">
+        </div>
+
+    </div>
+
+    <!--footer 시작-->
+    <div id="footer">
+        <h2>1234-1234</h2>
+        <p>평일 09:00~18:00 (주말 & 공휴일 제외)
+        <br/><br/>브랜드 스토리&emsp;회사소개&emsp;채용정보&emsp;이용약관&emsp;개인정보처리방침&emsp;공지사항&emsp;고객의 소리&emsp;전문가 등록&emsp;사업자 구매회원
+        <br/><br/>상호명: (주)HIN&emsp;이메일: hin@ansan.ac.kr&emsp;팀원: 윤상규, 홍의주, 김태은, 안현빈&emsp;사업자등록번호: 123-456-789
+        <br/><br/>주소: 경기도 안산시 상록구 안산대학로 155</p>
+    </div>
+
+    <script type="text/javascript" src="script/pageing.js"></script>
+
+</body>
+</html>

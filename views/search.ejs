@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무모한 남매들</title>
+    <script type="text/javascript" src=//code.jquery.com/jquery-3.2.1.min.js></script>
+    <link rel="stylesheet" href="../css/store.css">
+</head>
+<body>
+    <!-- header 시작 -->
+    <header class="header">
+        <!--해더내용 시작(header_all)-->
+        <div class="header_index">
+            <div class="header_all">
+                <!-- 로고(header_all_logo) -->
+                <div class="header_all_logo">
+                    <a href="/"><img src="../img/logo2.jpg" alt="로고이미지"></a>
+                </div>
+                <!-- 검색(header_all_search) -->
+                <form  clas="search" action="/views/search" method="GET">
+                <div class="header_all_search">
+                    <input class="header_search_text" type="text" name="name" placeholder="h I n 당신의 가구를 검색해 보세요.">
+                    <input class="header_search_button" type="submit" style='cursor:pointer' value="검색">
+                </div>
+                </form>
+
+                <!-- 햄버거 메뉴(header_left_tab) -->
+                <div class="header_tab">
+                    <!--햄버거 메뉴-->
+                    <div class="header_left_tab">
+                        <div class="header_all_tab">
+                            <input class="burger-check" type="checkbox" id="burger-check" />
+                            <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+                            
+                            <div class="menu">
+                                <div style="width: 250px;">
+                                    <ul>
+                                        <%-login_status[0].logout %>
+                                        <%-login_status[0].user_info %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> <!--햄버거 메뉴 끝-->
+                </div> <!--header_tab-->
+            </div>
+        </div>
+    </header> <!--header 끝-->
+
+
+    <!-- contents 시작 -->
+    <div class="contents">
+        <!--아코디언 메뉴-->
+        <section class="accordion_menu_all">
+            <ul class="accordion_mainmenu">
+
+             <!--거실(living)-->
+                <li class="accor_nav">
+                    <% if (categori_code == 10 || categori_code == 13 || categori_code == 14 || categori_code == 24 ) { %>
+                        <a href="/views/store?categori=10" ><h2 id="page">거실</h2></a>
+                        <ul class="subMenu">
+                            <li>
+                                <a href="/views/store?categori=10" >
+                                <% if (categori_code == 10) { %>
+                                    <span class="on">거실장</span>
+                                <% } else { %>
+                                    <span>거실장</span>
+                                <% } %>
+                                </a>
+                            </li>  
+                            <li>
+                                <a href="/views/store?categori=13">
+                                    <% if (categori_code == 13) { %>
+                                        <span class="on">서랍장</span>
+                                    <% } else { %>
+                                        <span>서랍장</span>
+                                    <% } %>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/views/store?categori=14">
+                                    <% if (categori_code == 14) { %>
+                                        <span class="on">소파</span>
+                                    <% } else { %>
+                                        <span>소파</span>
+                                    <% } %>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/views/store?categori=24">
+                                    <% if (categori_code == 24) { %>
+                                        <span class="on">테이블</span>
+                                    <% } else { %>
+                                        <span>테이블</span>
+                                    <% } %>
+                                </a>
+                            </li>
+                        </ul>
+                    <% } else { %>
+                        <a href="/views/store?categori=10" ><h2>거실</h2></a>
+                    <% } %>
+                </li>
+
+                <!--침실(sleeping)-->
+                <li class="accor_nav">
+                    <% if (categori_code == 23 || categori_code == 12) { %>
+                        <a href="/views/store?categori=23"><h2 id="page">침실</h2></a>
+                        <ul class="subMenu">
+                            <li><a href="/views/store?categori=23">
+                                <% if (categori_code == 23) { %>
+                                    <span class="on">침대</span>
+                                <% } else { %>
+                                    <span>침대</span>
+                                <% } %>
+                                </a>
+                            </li>
+                            <li><a href="/views/store?categori=12">
+                                <% if (categori_code == 12) { %>
+                                    <span class="on">매트리스</span>
+                                <% } else { %>
+                                    <span>매트리스</span>
+                                <% } %>
+                        </a></li>
+                        </ul>
+                    <% } else { %>
+                        <a href="/views/store?categori=23"><h2>침실</h2>
+                    <% } %>
+                </li>
+
+                <!--서재(study)-->
+                <li class="accor_nav">
+                    <% if (categori_code == 22 || categori_code == 21 || categori_code == 18) { %>
+                        <a href="/views/store?categori=22"><h2 id="page">서재</h2></a>
+                        <ul class="subMenu">
+                            <li><a href="/views/store?categori=22">
+                                <% if (categori_code == 22) { %>
+                                    <span class="on">책장</span>
+                                <% } else { %>
+                                    <span>책장</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=21">
+                                <% if (categori_code == 21) { %>
+                                    <span class="on">책상</span>
+                                <% } else { %>
+                                    <span>책상</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=18">
+                                <% if (categori_code == 18) { %>
+                                    <span class="on">의자</span>
+                                <% } else { %>
+                                    <span>의자</span>
+                                <% } %>
+                            </a>
+                        </li>
+                        </ul>
+                    <% } else { %>
+                        <a href="/views/store?categori=22"><h2>서재</h2></a>
+                    <% } %>
+                </li>
+
+                <!--주방(kitchen)-->
+                <li class="accor_nav">
+                    <% if (categori_code == 15 || categori_code == 16 || categori_code == 20) { %>
+                        <a href="/views/store?categori=15"><h2 id="page">주방</h2></a>
+                        <ul class="subMenu">
+                            <li><a href="/views/store?categori=15">
+                                <% if (categori_code == 15) { %>
+                                    <span class="on">식탁</span>
+                                <% } else { %>
+                                    <span>식탁</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=16">
+                                <% if (categori_code == 16) { %>
+                                    <span class="on">식탁의자</span>
+                                <% } else { %>
+                                    <span>식탁의자</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=20">
+                                <% if (categori_code == 20) { %>
+                                    <span class="on">주방수납</span>
+                                <% } else { %>
+                                    <span>주방수납</span>
+                                <% } %>
+                            </a>
+                        </li>
+                        </ul>
+                        <% } else { %>
+                            <a href="/views/store?categori=15"><h2>주방</h2></a>
+                        <% } %>
+                </li>
+
+                <!--옷방(closet)-->
+                <li class="accor_nav">
+                    <% if (categori_code == 17 || categori_code == 25 || categori_code == 26 || categori_code == 11) { %>
+                        <a href="/views/store?categori=17"><h2 id="page">옷방</h2></a>
+                        <ul class="subMenu">
+                            <li><a href="/views/store?categori=17">
+                                <% if (categori_code == 17) { %>
+                                    <span class="on">옷장</span>
+                                <% } else { %>
+                                    <span>옷장</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=25">
+                                <% if (categori_code == 25) { %>
+                                    <span class="on">행거</span>
+                                <% } else { %>
+                                    <span>행거</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=26">
+                                <% if (categori_code == 26) { %>
+                                    <span class="on">화장대</span>
+                                <% } else { %>
+                                    <span>화장대</span>
+                                <% } %>
+                            </a>
+                        </li>
+                            <li><a href="/views/store?categori=11">
+                                <% if (categori_code == 11) { %>
+                                    <span class="on">거울</span>
+                                <% } else { %>
+                                    <span>거울</span>
+                                <% } %>
+                            </a>
+                        </li>
+                        </ul>
+                    <% } else { %>
+                        <a href="/views/store?categori=17"><h2>옷방</h2></a>
+                    <% } %>
+                </li>
+                
+                <!--욕실(bath)-->
+                <li class="accor_nav">
+                    <h2>욕실</h2>
+                </li>
+            </ul> <!--accordion_mainmenu 끝-->
+        </section> <!--accodion_menu_all 끝-->
+        
+
+
+        <!--------------- 컨텐츠 상품 목록 ----------------->
+        <section class="section_popular">
+    
+            <!-- ejs 형식으로 서버에서 데이터 받아서 쓰는 형식으로 바꿈. -->
+            <div class="store_product">
+                <!--상품1-->
+                <% if (max_page == page_num) { %>
+                    <% for(var i =0; i <last_products; i++) {%>
+                        <div class="product_wrap"> 
+                            <div class="product_details">
+                                <a class='info_link' href='/detail?id=<%=store_data[i].product_id %>'><img  class="product_Img" src=<%=store_data[i].imglink %>></a>
+                                    <div class="product_info">
+                                        <div class="info_brand"><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].brand %></a></div>
+                                        <div class="info_name" name=<%=store_data[i].product_id %>><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].name %></a></div>
+                                        <div class="info_price"><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].price %></a></div>
+                                        <% if (login_status[0].status  == "ok"){ %>
+                                            <% if (store_data[i].heart == "ok") { %>
+                                                <button class="wishlist_btn" name="del"><img src="../img/heart.svg" name="<%=i %>" ></button><!-- svg 하트 -->
+                                            <% }else { %>
+                                                <button class="wishlist_btn" name="add"><img src="../img/empty_heart.svg" name="<%=i %>"></button><!-- svg 빈하트 -->
+                                            <% } %>
+                                        <% } else { %>
+                                            <button class="wishlist_btn" name="heart"><img src="../img/empty_heart.svg" ></button><!-- svg 빈하트 -->
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                <% } else { %>
+                    <% for(var i =0; i <15; i++) {%>
+                        <div class="product_wrap"> 
+                            <div class="product_details">
+                                <a class='info_link' href='/detail?id=<%=store_data[i].product_id %>'><img  class="product_Img" src=<%=store_data[i].imglink %>></a>
+                                    <div class="product_info">
+                                        <div class="info_brand"><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].brand %></a></div>
+                                        <div class="info_name" name=<%=store_data[i].product_id %>><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].name %></a></div>
+                                        <div class="info_price"><a href='/detail?id=<%=store_data[i].product_id %>'><%=store_data[i].price %></a></div>
+                                        <% if (login_status[0].status  == "ok"){ %>
+                                            <% if (store_data[i].heart == "ok") { %>
+                                                <button class="wishlist_btn" name="del"><img src="../img/heart.svg" name="<%=i %>" ></button><!-- svg 하트 -->
+                                            <% }else { %>
+                                                <button class="wishlist_btn" name="add"><img src="../img/empty_heart.svg" name="<%=i %>"></button><!-- svg 빈하트 -->
+                                            <% } %>
+                                        <% } else { %>
+                                            <button class="wishlist_btn" name="heart"  ><img src="../img/empty_heart.svg" ></button><!-- svg 빈하트 -->
+                                        <% } %>
+                                </div>
+                            </div>
+                        </div>
+                        <% } %>  
+                    <% } %>
+
+        </div> <!--contents_product_all 끝--> 
+    </div> <!--contents 끝-->
+    
+    <!--page_all 시작-->
+    <div class="page_all">
+        <div class="page_left"></div>
+        <ul>
+            <% if (!page_num) { %>
+                <% if (max_page < 10) { %>
+                        <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=1">1</a>
+                        <% for (var i = 2; i <=max_page; i++) { %>
+                            <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                        <% } %>
+                        <a class="end_btn" href="/views/search?name=<%=categori_code %>&page=<%=max_page %>"><img src="../img/end.svg" alt=""></a>
+                <% } else { %>
+                        <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=1">1</a>
+                        <% for (var i = 2; i < 11; i++) { %>
+                            <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                        <% } %>
+                        <a class="end_btn" href="/views/search?name=<%=categori_code %>&page=<%=max_page %>"><img src="../img/end.svg" alt=""></a>
+                    <% } %>
+            <% } else { %>
+                <% if (page_num < 7) { %>
+                    <% if (page_num != 1) { %>
+                        <a class="first_btn" href="/views/search?name=<%=categori_code %>&page=1"><img src="../img/first.svg" alt=""></a>
+                    <% } %> 
+                    <% if (max_page < 11) { %>
+                        <% for (var i = 1; i <=max_page; i++) { %>
+                            <% if (i == page_num) { %> 
+                                <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } else { %>
+                                <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } %> 
+                        <% } %> 
+                    <% } else { %>
+                        <% for (var i = 1; i < 11; i++) { %>
+                            <% if (i == page_num) { %> 
+                                <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } else { %>
+                                <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } %> 
+                        <% } %>
+                    <% } %>
+                    <% if (page_num != max_page) { %>
+                        <a class="end_btn" href="/views/search?name=<%=categori_code %>&page=<%=max_page %>"><img src="../img/end.svg" alt=""></a>
+                    <% } %>   
+                <% }else if (page_num == 7 || page_num == 8 || page_num == 9) { %>
+                        <a class="first_btn" href="/views/search?name=<%=categori_code %>&page=1"><img src="../img/first.svg" alt=""></a>
+                        <% if (max_page< 10) { %> 
+                            <% for (var i = 1; i <=max_page; i++) { %>
+                                <% if (i == page_num) { %> 
+                                    <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                                <% } else { %>
+                                    <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                                <% } %> 
+                            <% } %> 
+                        <% } else { %> 
+                            <% for (var i = -5; i < 0; i++) { %>
+                                <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=page_num+i  %>"><%=page_num+i  %></a>
+                            <% } %> 
+                            <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=page_num %>"><%=page_num %></a>
+                            <% if (max_page-page_num > 5) {%>
+                                <% for (var i = 1; i < 5; i++) { %>
+                                    <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=page_num+i %>"><%=page_num+i %></a>
+                                <% } %>
+                            <% } else { %>
+                                <% for (var i = 1; i < max_page-page_num; i++) { %>
+                                    <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=page_num+i %>"><%=page_num+i %></a>
+                                <% } %>
+                            <% } %>
+                        <% } %>
+                        <% if (page_num != max_page) { %>
+                            <a class="end_btn" href="/views/search?name=<%=categori_code %>&page=<%=max_page %>"><img src="../img/end.svg" alt=""></a>
+                        <% } %>  
+                <%} else { %>
+                    <% if (page_num != 1) { %>
+                        <a class="first_btn" href="/views/search?name=<%=categori_code %>&page=1"><img src="../img/first.svg" alt=""></a>
+                    <% } %> 
+                    <% if (max_page-page_num > 5) { %>
+                        <% for (var i = -5; i < 0; i++) { %>
+                            <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=page_num+i %>"><%=page_num+i %></a>
+                        <% } %>
+                        <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=page_num %>"><%=page_num %></a>
+                        <% for (var i = 1; i < 5; i++) { %>
+                            <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=page_num+i %>"><%=page_num+i %></a>
+                        <% } %>
+                    <% } else { %>
+                        <% for (var i = max_page-9; i <= max_page; i++) { %>
+                            <% if (i == page_num) { %> 
+                                <a class="pageOn" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } else { %>
+                                <a class="pageOff" href="/views/search?name=<%=categori_code %>&page=<%=i %>"><%=i %></a>
+                            <% } %> 
+                        <% } %>
+                    <% } %>
+                    <% if (page_num != max_page) { %>
+                        <a class="end_btn" href="/views/search?name=<%=categori_code %>&page=<%=max_page %>"><img src="../img/end.svg" alt=""></a>
+                    <% } %>   
+                <% } %>
+            <% } %>
+        </ul>
+    </div><!--contents_page_all 끝-->
+    <script type="text/javascript" src="../script/wishlist.js"></script>
+
+</body>
+</html>

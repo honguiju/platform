@@ -1,0 +1,53 @@
+--- 상품 테이블 ---------------------
+CREATE TABLE products (
+    id INT NOT NULL AUTO_INCREMENT , 
+    product_id INT NOT NULL, 
+    name VARCHAR(50) NOT NULL,
+    price char(20) NOT NULL,
+    link VARCHAR(500) NOT NULL, 
+    imglink VARCHAR(500) NOT NULL, 
+    brand VARCHAR(30) NOT NULL,
+    kind char(10) NOT NULL,
+    PRIMARY KEY (id) 
+) ENGINE = InnoDB;
+-----------------------------------------
+
+--- 유저 테이블 --------------------------
+CREATE TABLE users ( 
+    id INT NOT NULL AUTO_INCREMENT , 
+    authId VARCHAR(50) NOT NULL ,
+    login_id char(10),
+    email VARCHAR(30), 
+    password VARCHAR(255), 
+    salt VARCHAR(255),
+    PRIMARY KEY (id), 
+    UNIQUE (authId)
+) ENGINE = InnoDB;
+
+-------------------------------------------------
+
+---찜 목록 테이블 ----------------------------
+CREATE TABLE wishlist  ( 
+    id INT NOT NULL AUTO_INCREMENT,
+    product_id INT NOT NULL,
+    login_id VARCHAR(20) NOT NULL, 
+    name VARCHAR(50) NOT NULL,
+    price char(20) NOT NULL,
+    imglink VARCHAR(500) NOT NULL, 
+    brand VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE = InnoDB;
+
+-------------------------------------------------
+
+---픽 목록 테이블 ----------------------------
+CREATE TABLE pick  ( 
+    product_id INT NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    price char(20) NOT NULL,
+    imglink VARCHAR(500) NOT NULL, 
+    brand VARCHAR(30) NOT NULL,
+    PRIMARY KEY (product_id)
+) ENGINE = InnoDB;
+
+-------------------------------------------------

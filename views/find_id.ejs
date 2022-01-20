@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src=//code.jquery.com/jquery-3.2.1.min.js></script>
+    <link rel="stylesheet" href="../css/find_id.css">
+
+</head>
+<body>
+       <!-- header 시작 -->
+       <header class="header">
+        <!--해더내용 시작(header_all)-->
+        <div class="header_index">
+            <div class="header_all">
+                <!-- 로고(header_all_logo) -->
+                <div class="header_all_logo">
+                    <a href="/"><img src="../img/logo2.jpg" alt="로고이미지"></a>
+                </div>
+                <!-- 검색(header_all_search) -->
+                <form action="/views/search" method="GET">
+                    <div class="header_all_search">
+                        <input class="header_search_text" type="text" name="name" placeholder="h I n 당신의 가구를 검색해 보세요.">
+                        <input class="header_search_button" type="submit" style='cursor:pointer' value="검색">
+                    </div>
+                </form>
+
+                <!-- 햄버거 메뉴(header_left_tab) -->
+                <div class="header_tab">
+                    <!--햄버거 메뉴-->
+                    <div class="header_left_tab">
+                        <div class="header_all_tab">
+                            <input class="burger-check" type="checkbox" id="burger-check" />
+                            <label class="burger-icon" for="burger-check"><span class="burger-sticks"></span></label>
+                            
+                            <div class="menu">
+                                <div style="width: 250px;">
+                                    <ul>
+                                        <%-login_status[0].logout %>
+                                        <%-login_status[0].user_info %>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
+                    </div> <!--햄버거 메뉴 끝-->
+                </div> <!--header_tab-->
+            </div>
+        </div>
+
+        <!--네비내용 시작(nav) -->
+        <div class="nav">
+            <div class="nav_main">
+                <li><a href="/views/store?categori=10" class="nav_link">거실</a></li>
+                <li><a href="/views/store?categori=23" class="nav_link">침실</a></li>
+                <li><a href="/views/store?categori=22" class="nav_link">서재</a></li>
+                <li><a href="/views/store?categori=15" class="nav_link">주방</a></li>
+                <li><a href="/views/store?categori=17" class="nav_link">옷방</a></li>
+                <li><a href="#" class="nav_link">욕실</a></li>
+            </div>
+        </div>
+    </header> <!--header 끝-->
+
+
+    <!-- contents 시작 -->
+    <div class="contents">
+
+        <div class="find_info_box">
+            <div class="join_email">
+                <h3 class="join_title"><label for="user_email">본인확인 이메일</label></h3>
+                <span class="box int_email">
+                    <input type="text" id="user_email" class="int" maxlength="50" name="email" placeholder="이메일 입력">
+                    <input type="button" id="check_email_btn" value="확인" onclick="email_check()">
+                </span>
+                <span class="message_box overlap_message"></span>
+               
+                <input type="button" id="send_mail_btn" value="인증번호 받기" onclick="send_mail()"/>
+            </div>        
+        </div>
+    </div>
+
+  <!--footer 시작-->
+  <footer id="footer">
+    <div class="footer_wrap">
+        <h2>1234-1234</h2>
+        <p>평일 09:00~18:00 (주말 & 공휴일 제외)
+        <br/><br/>브랜드 스토리&emsp;회사소개&emsp;채용정보&emsp;이용약관&emsp;개인정보처리방침&emsp;공지사항&emsp;고객의 소리&emsp;전문가 등록&emsp;사업자 구매회원
+        <br/><br/>상호명: (주)HIN&emsp;이메일: hin@ansan.ac.kr&emsp;팀원: 윤상규, 홍의주, 김태은, 안현빈&emsp;사업자등록번호: 123-456-789
+        <br/><br/>주소: 경기도 안산시 상록구 안산대학로 155</p>
+    </div>
+</footer>
+    <script type="text/javascript" src="../script/find_id.js"></script>
+    
+</body>
+</html>
