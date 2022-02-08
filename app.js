@@ -226,7 +226,6 @@ passport.use(new LocalStrategy(
                                 if (online_user_id_index== -1){
                                     done(null,user);
                                 } else{
-                                    //현재 사용자를 로그아웃 시키고 로그인.
                                     done(null,user);
                                 }
                                
