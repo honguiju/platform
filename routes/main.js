@@ -10,7 +10,7 @@ module.exports = function(client){
     
         if (req.user && req.user.login_id) {
             var replace_login_code = [{
-                'logout' : `<li><a href="/views/logout">로그아웃</a></li>`, 
+                'logout' : `<li><a href="/views/login/logout">로그아웃</a></li>`, 
                 'user_info' : `<li><a href="/views/mypage">마이페이지</a></li>`,
                 'status' : 'ok'
             }];

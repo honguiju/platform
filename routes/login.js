@@ -2,30 +2,11 @@ var express =require('express');
 var route = express.Router();
 var flash = require('connect-flash');   
 var session= require('express-session');
-var passport = require('passport')                       //로그인 구성 모듈
-  , LocalStrategy = require('passport-local').Strategy;    // 여기까지
-var MySQLStore = require('express-mysql-session')(session);  // 데이터베이스 세션으로 로그인상태 체크
 var crypto = require('crypto'); 
 
 
-module.exports = function(client){
-    route.use(session({                           // 세션 설정 --> 로그인시 데이터베이스에 저장됨.
-        secret:'secret key@1458',            //★★★ 이놈 처리 잘해야함. 노출시 위험. 처리하는거 찾아봐야함 ★★★
-        resave: false,  //resave 세션아이디를 접속할때마다 발급하지 않는다
-        saveUninitialized: true,
-        store: new MySQLStore({
-            host: 'localhost',
-            port: 3333,
-            user: 'root',
-            password: '1458',
-            database: 'hin'
-        })
-    }));
-    route.use(flash());               //로그인시 실패 메시지 때문에 1회성 메시지 사용
-    route.use(passport.initialize());
-    route.use(passport.session());
-    
-    
+module.exports = function(client,passport,LocalStrategy){
+
     route.get('/',function(req,res){
         var fmsg=req.flash();
         var feedback='';
