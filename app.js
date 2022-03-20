@@ -121,7 +121,7 @@ app.use('/views/signup',signup);
 
 
 ////////////////////////// id 찾기 라우터 ////////////////////////////////////////////
-// 아이디 찾기 라우터
+// ID 찾기 라우터
 var find_id = require('./routes/find_id')(client);
 app.use('/views/find_id',find_id);
 
@@ -131,7 +131,7 @@ app.use('/views/find_id',find_id);
 
 
 //////////////////////////// pw 찾기 라우터 /////////////////////////////////////////
-// 아이디 찾기 라우터
+// PW 찾기 라우터
 var find_pw = require('./routes/find_pw')(client);
 app.use('/views/find_pw',find_pw);
 
